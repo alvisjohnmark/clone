@@ -20,4 +20,12 @@ class CommentController extends Controller
         //redirect with flash message
         return redirect()->route('dashboard')->with('success', 'Added successfully');
     }
+
+    public function destroy($id)
+    {
+        $comment = Comment::where('id', $id)->firstOrFail()->delete();
+
+        return redirect()->route('dashboard')->with('success', 'Deleted successfully');
+    }
+    
 }
