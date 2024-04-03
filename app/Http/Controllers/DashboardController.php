@@ -10,7 +10,7 @@ class DashboardController extends Controller
     public function index()
     {
         return view('dashboard', [
-            'comments' => Comment::orderBy('created_at', 'DESC')->get()
+            'comments' => Comment::orderBy('created_at', 'DESC')->paginate(3) //pagination
         ]);
     }
 

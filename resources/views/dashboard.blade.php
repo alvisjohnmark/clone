@@ -41,9 +41,10 @@
             <hr>
             @foreach ($comments as $c1)
                 <div class="mt-3">
-                  @include('includes._comment-card')
+                    @include('includes._comment-card')
                 </div>
             @endforeach
+            {{ $comments->links() }} //display pagination
         </div>
         <div class="col-3">
             <div class="card">
